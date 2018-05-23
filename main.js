@@ -1,4 +1,4 @@
-var RomanNumerals = function() {}
+var romanNumerals = function() {}
 
 var numeral =  function(value, numeral){
     return {value: value, numeral: numeral};
@@ -20,24 +20,14 @@ var numerals = [
     numeral(1, "I")
 ];
 
-RomanNumerals.prototype.fromNumber = function(n){
+romanNumerals.prototype.fromNumber = function(n){
     var result = "";
     numerals.forEach(function(item){    
         for (; n >= item.value; n -= item.value){
             result += item.numeral;
         } 
     });
-    /// while (n > 0) {
-    ///     result += "I";
-    ///     --n;
-    /// }
-    // if (3 === n){
-    //     return "III"
-    // }
-    // if (2 === n){
-    //     return "II"
-    // }
     return result;
 };
 
-module.exports = new RomanNumerals();
+module.exports = new romanNumerals();
