@@ -1,13 +1,16 @@
-var romanNumerals = require("./main")
+var application = require("./main");
+
+var app;
 
 describe("RomanNumerals", function() {
+    
+    app = application();
     it("converts numbers to Roman numerals", function(){
         
-
-        expect(romanNumerals.fromNumber(1)).toBe("I");
-        expect(romanNumerals.fromNumber(2)).toBe("II");
-        expect(romanNumerals.fromNumber(3)).toBe("III");
-        expect(romanNumerals.fromNumber(4)).toBe("IV");
-        expect(romanNumerals.fromNumber(2648)).toBe("MMDCXLVIII");
+        expect(app.init(1)).toBe("I");
+        expect(app.init(2)).toBe("II");
+        expect(app.init(3)).toBe("III");
+        expect(app.init(4)).toBe("IV");
+        expect(app.init(2648)).toBe("MMDCXLVIII");
     });
 });
